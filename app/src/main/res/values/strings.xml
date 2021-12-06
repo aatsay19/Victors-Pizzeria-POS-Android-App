@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Project5</string>
+    <string name="welcomeText">Welcome to the RU Pizzeria Order Manager Android App! What would you like to do?</string>
+    <string name="orderDeluxeButtonText">Order Deluxe Pizza</string>
+    <string name="orderHawaiianButtonText">Order Hawaiian Pizza</string>
+    <string name="orderPepperoniButtonText">Order Pepperoni Pizza</string>
+    <string name="viewCurrentOrderButtonText">View Current Order</string>
+    <string name="viewListOfStoreOrdersText">View List Of Store Orders</string>
+    <string name="CurrentOrdersViewHeading">Current Order:</string>
+</resources>
