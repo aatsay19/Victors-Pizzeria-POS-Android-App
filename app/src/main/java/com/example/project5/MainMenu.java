@@ -13,11 +13,16 @@ public class MainMenu extends AppCompatActivity {
     private Button orderPepperoniButton;
     private Button viewCurrentOrderButton;
     private Button viewListOfStoreOrdersButton;
+    public static final String IMAGE_RESOURCE = "image_resource";
+    public static String pizzaType = "Pizza Type: ";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+        orderDeluxeButton = (Button) findViewById(R.id.orderDeluxeButton);
+        orderHawaiianButton = (Button) findViewById(R.id.orderHawaiianButton);
+        orderPepperoniButton = (Button) findViewById(R.id.orderPepperoniButton);
         handleOrderDeluxeButtonClick();
         handleOrderHawaiianButtonClick();
         handleOrderPepperoniButtonClick();
@@ -26,31 +31,37 @@ public class MainMenu extends AppCompatActivity {
     }
 
     public void handleOrderDeluxeButtonClick() {
-        orderDeluxeButton = (Button) findViewById(R.id.orderDeluxeButton);
         orderDeluxeButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                openPizzaCustomizationActivity();
+            public void onClick(View view) {
+                Intent intent = new Intent(MainMenu.this, PizzaCustomization.class);
+                intent.putExtra(IMAGE_RESOURCE, R.drawable.deluxepizzapic);
+                pizzaType = "Pizza Type: Deluxe";
+                startActivity(intent);
             }
         });
     }
 
     public void handleOrderHawaiianButtonClick() {
-        orderHawaiianButton = (Button) findViewById(R.id.orderHawaiianButton);
         orderHawaiianButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                openPizzaCustomizationActivity();
+            public void onClick(View view) {
+                Intent intent = new Intent(MainMenu.this, PizzaCustomization.class);
+                intent.putExtra(IMAGE_RESOURCE, R.drawable.hawaiianpizzapic);
+                pizzaType = "Pizza Type: Hawaiian";
+                startActivity(intent);
             }
         });
     }
 
     public void handleOrderPepperoniButtonClick() {
-        orderPepperoniButton = (Button) findViewById(R.id.orderPepperoniButton);
         orderPepperoniButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                openPizzaCustomizationActivity();
+            public void onClick(View view) {
+                Intent intent = new Intent(MainMenu.this, PizzaCustomization.class);
+                intent.putExtra(IMAGE_RESOURCE, R.drawable.pepperonipizzapic);
+                pizzaType = "Pizza Type: Pepperoni";
+                startActivity(intent);
             }
         });
     }
@@ -59,7 +70,7 @@ public class MainMenu extends AppCompatActivity {
         viewCurrentOrderButton = (Button) findViewById(R.id.viewCurrentOrderButton);
         viewCurrentOrderButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 openCurrentOrdersActivity();
             }
         });
@@ -69,7 +80,7 @@ public class MainMenu extends AppCompatActivity {
         viewListOfStoreOrdersButton = (Button) findViewById(R.id.viewListOfStoreOrdersButton);
         viewListOfStoreOrdersButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 openListOfStoreOrdersActivity();
             }
         });
@@ -77,11 +88,6 @@ public class MainMenu extends AppCompatActivity {
 
     public void openCurrentOrdersActivity() {
         Intent intent = new Intent(this, CurrentOrder.class);
-        startActivity(intent);
-    }
-
-    public void openPizzaCustomizationActivity() {
-        Intent intent = new Intent(this, PizzaCustomization.class);
         startActivity(intent);
     }
 

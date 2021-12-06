@@ -5,4 +5,26 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".PizzaCustomization"/>
+        tools:context=".PizzaCustomization">
+    <ImageView
+            android:src="@drawable/pepperonipizzapic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/pizzaImage"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.045"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/pizzaType"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintVertical_bias="0.324"/>
+    <Spinner
+            android:layout_width="409dp"
+            android:layout_height="wrap_content" android:id="@+id/pizzaSizesSpinner"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.353"
+    />
+</androidx.constraintlayout.widget.ConstraintLayout>

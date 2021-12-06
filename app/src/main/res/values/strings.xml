@@ -7,4 +7,6 @@
     <string name="viewCurrentOrderButtonText">View Current Order</string>
     <string name="viewListOfStoreOrdersText">View List Of Store Orders</string>
     <string name="CurrentOrdersViewHeading">Current Order:</string>
+    <string name="pizzaSizeSmallButtonText">Small</string>
+    <string name="pizzaSizeMediumButtonText">Medium</string>
 </resources>
